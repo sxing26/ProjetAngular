@@ -1,0 +1,24 @@
+<mat-card class="search-bar">
+    <form [formGroup]="searchForm">
+      <mat-card-header class="search-bar-header">
+        <mat-card-title>Filtrer les produits</mat-card-title>
+      </mat-card-header>
+  
+      <mat-form-field class="search-bar-field" appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input matInput type="text" formControlName="name" />
+      </mat-form-field>
+  
+      <mat-form-field class="search-bar-field" appearance="fill">
+        <mat-select formControlName="status">
+          <mat-option>-- None --</mat-option>
+          <mat-option value="alive">Alive</mat-option>
+          <mat-option value="dead">Dead</mat-option>
+          <mat-option value="unknown">Unknown</mat-option>
+        </mat-select>
+        <mat-label>Disponibility</mat-label>
+      </mat-form-field>
+
+      <mat-checkbox formControlName="alive"> Disponible? </mat-checkbox>
+    </form>
+  </mat-card>

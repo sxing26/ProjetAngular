@@ -1,0 +1,52 @@
+<app-filter (search)="newSearch($event)"></app-filter>
+
+<!-- <table class="product-table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Disponibility</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Year</th>
+    </tr>
+    <tr 
+        *ngFor="let product of allProducts$ | async"
+        [routerLink]="'/products/' + product.id"
+        class="product-line"
+        (click)="onClick(product.id)"
+        [class.selected]="
+            selectedProduct && product.id === selectedProduct.id
+        "
+    >
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        // <td>{{ product.disponibility }}</td> 
+        <td>{{ product.status }}</td>
+        <td>{{ product.vehicleBrand }}</td>
+        <td>{{ product.vehicleModel }}</td>
+        <td>{{ product.vehicleYear }}</td>
+
+    </tr>
+</table> -->
+
+<div class="card-container">
+    <mat-card
+      class="card"
+      *ngFor="let product of allProducts$ | async"
+      [routerLink]="'/products/' + product.id"
+    >
+      <mat-card-title>{{ product.name | uppercase }}</mat-card-title>
+  
+      <img
+        mat-card-image
+        [src]="product.image"
+        alt="Photo of {{ product.name }}"
+      />
+      <mat-card-content>
+        <ng-container *ngIf="product.status !== 'unknown'">
+          <strong>Disponibility: </strong> {{ product.status }}
+        </ng-container>
+      </mat-card-content>
+    </mat-card>
+  </div>
+

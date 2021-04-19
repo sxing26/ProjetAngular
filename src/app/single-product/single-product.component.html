@@ -1,0 +1,31 @@
+<!-- <div>
+  <div class="card">
+    <div class="container" *ngIf="product$ | async as product">
+
+      <h4
+      [class.available]="product.disponibility === 'available'"
+      [class.outOfStock]="product.disponibility === 'out of stock'"
+      [class.lowStock]="product.disponibility === 'stock running low'"
+      [class.stockSoon]="product.disponibility === 'available soon'"
+      >{{ product.name }}</h4>
+      <h4>{{ product.id }}</h4>
+      <button (click)="clickPanier(product)">Ajouter au panier</button>
+    </div>
+  </div>
+</div> -->
+
+<a mat-flat-button routerLink="/products" class="back-btn">
+  <mat-icon>undo</mat-icon>Retour a la liste des personnages
+</a>
+
+<mat-card class="card" *ngIf="product$ | async as product">
+  <img [alt]="product.name" [src]="product.image" />
+  <div class="container">
+    <h1>
+      {{ product.name }}
+    </h1>
+    <p>Disponibility : {{ product.status }}</p>
+    <button (click)="clickPanier(product)">Ajouter au panier</button>
+  </div>
+</mat-card>
+

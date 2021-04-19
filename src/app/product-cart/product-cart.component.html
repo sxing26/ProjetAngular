@@ -1,0 +1,25 @@
+<table class="product-table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Disponibility</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Remove?</th>
+    </tr>
+    <tr 
+        *ngFor="let product of contenuPanier"
+        class="product-line"
+    >
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <!-- <td>{{ product.disponibility }}</td> -->
+        <td>{{ product.status }}</td>
+        <td>{{ product.vehicleBrand }}</td>
+        <td>{{ product.vehicleModel }}</td>
+        <td>{{ product.vehicleYear }}</td>
+        <th><button (click)="removeFromPanier(product.id)">Remove from cart!</button></th>
+    </tr>
+</table>
+

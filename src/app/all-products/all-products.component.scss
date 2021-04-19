@@ -1,0 +1,45 @@
+@import "~@angular/material/theming";
+
+/* .product-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  
+    th,
+    td {
+      text-align: left;
+      padding: 16px;
+    }
+  
+    .product-line {
+      cursor: pointer;
+  
+      &:hover {
+        background-color: lightgray;
+      }
+      &.selected {
+        background-color: lightseagreen;
+      }
+    }
+  } */
+
+  .card-container {
+    width: 90%;
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+  
+    .card {
+      cursor: pointer;
+  
+      &:hover {
+        @include mat-elevation(8);
+      }
+    }
+  }
+  
